@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+
+<AnchorPane fx:id="root2" prefHeight="636.0" prefWidth="545.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.rms.controller.RegisterFormController">
+   <children>
+      <Pane layoutX="10.0" layoutY="15.0" prefHeight="607.0" prefWidth="525.0" style="-fx-background-color: rgba(181, 150, 121, 0.9); -fx-background-radius: 10; -fx-background-insets: 15;">
+         <children>
+            <Label layoutX="88.0" layoutY="47.0" prefHeight="45.0" prefWidth="355.0" text="Register As New User">
+               <font>
+                  <Font name="Corbel Bold" size="38.0" />
+               </font>
+            </Label>
+            <Text layoutX="75.0" layoutY="167.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Enter Your Employee ID">
+               <font>
+                  <Font name="Corbel" size="18.0" />
+               </font>
+            </Text>
+            <Text layoutX="76.0" layoutY="275.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Enter Valid Username">
+               <font>
+                  <Font name="Corbel" size="18.0" />
+               </font>
+            </Text>
+            <Text layoutX="74.0" layoutY="382.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password">
+               <font>
+                  <Font name="Corbel" size="18.0" />
+               </font>
+            </Text>
+            <Button fx:id="RegisterBtn" layoutX="181.0" layoutY="497.0" mnemonicParsing="false" onAction="#RegisterBtnOnAction" prefHeight="48.0" prefWidth="162.0" stylesheets="@../styles/button.css" text="Register">
+               <font>
+                  <Font name="Corbel Bold" size="21.0" />
+               </font>
+            </Button>
+            <JFXTextField fx:id="employeeIdTxt" layoutX="75.0" layoutY="188.0" prefHeight="29.0" prefWidth="379.0" promptText="Employee Id" unFocusColor="#4e3aff" />
+            <JFXTextField fx:id="usernameTxt" layoutX="76.0" layoutY="296.0" prefHeight="29.0" prefWidth="379.0" promptText="Username" unFocusColor="#4e3aff" />
+            <JFXTextField fx:id="pwTxtField" disable="true" layoutX="74.0" layoutY="404.0" onAction="#pwTxtFieldTextChanged" prefHeight="28.0" prefWidth="383.0" promptText="Password" unFocusColor="#4e3aff" visible="false" />
+            <JFXPasswordField fx:id="pwFieldTxt" layoutX="74.0" layoutY="404.0" onAction="#pwFieldTxtTextChanged" prefHeight="28.0" prefWidth="383.0" promptText="Password" unFocusColor="#4e3aff" />
+            <ImageView fx:id="hidePwBtn" fitHeight="18.0" fitWidth="18.0" layoutX="190.0" layoutY="187.0" onMouseClicked="#hidePwBtnOnMouseClicked" visible="false" x="235.0" y="225.0">
+               <image>
+                  <Image url="@../img/hide.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+            <ImageView fx:id="viewPwBtn" fitHeight="18.0" fitWidth="18.0" layoutX="190.0" layoutY="187.0" onMouseClicked="#viewPwBtnOnMouseClicked" x="235.0" y="225.0">
+               <image>
+                  <Image url="@../img/view.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+            <Label fx:id="incorrectUserNameLbl" layoutX="76.0" layoutY="337.0" text="* use only simple letters &amp; 12 charactors" textFill="RED" visible="false" />
+            <Label fx:id="validPwLbl" layoutX="75.0" layoutY="450.0" text="* Input valit password (Ex :- Prasa2@31 )" textFill="RED" visible="false" />
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

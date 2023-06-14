@@ -1,0 +1,27 @@
+.chart-line-symbol {
+    -fx-background-color: white;
+    -fx-background-radius: 5px;
+    -fx-padding: 3px;
+}
+
+.chart-series-line {
+    -fx-stroke-width: 2px;
+}
+
+.chart-vertical-grid-lines {
+    -fx-stroke: #e0e0e0;
+}
+
+.chart-horizontal-grid-lines {
+    -fx-stroke: #e0e0e0;
+}
+
+.chart-axis {
+    -fx-label-text-fill: #666666;
+}
+
+.chart-title {
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #333333;
+}

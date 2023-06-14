@@ -1,0 +1,22 @@
+.table-view .column-header-background {
+    -fx-pref-height: 0;
+    -fx-max-height: 0;
+    -fx-min-height: 0;
+    -fx-background-color: transparent;
+    -fx-padding: 0;
+}
+.table-view {
+    -fx-background-color: transparent;
+}
+.table-row-cell {
+    -fx-background-color: transparent;
+}
+.table-cell {
+    -fx-font-size: 15px;
+}
+.table-view .table-cell {
+    -fx-alignment: center;
+}
+.table-view .table-column .table-cell {
+    -fx-alignment: center;
+}

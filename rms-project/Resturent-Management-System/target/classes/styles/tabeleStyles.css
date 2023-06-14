@@ -1,0 +1,25 @@
+.table-view {
+    -fx-background-color: #F5F5F5;
+}
+
+.table-view .column-header-background {
+    -fx-background-color: #EEEEEE;
+    -fx-background-radius: 10;
+}
+
+.table-view .table-cell {
+    -fx-alignment: center;
+    -fx-background-color:  rgba(223, 230, 233,0.7);
+}
+
+.table-view .table-row-cell:even {
+    -fx-background-color: #848181
+}
+
+.table-view .table-row-cell:selected {
+    -fx-background-color: #3399FF;
+    -fx-text-fill: white;
+}
+.table-cell {
+    -fx-font-size: 13px;
+}

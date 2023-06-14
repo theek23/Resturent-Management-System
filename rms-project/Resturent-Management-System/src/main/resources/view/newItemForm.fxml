@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="730.0" prefWidth="455.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.rms.controller.NewItemFormController">
+    <children>
+        <Label layoutX="156.0" layoutY="30.0" text="Add New Item">
+            <font>
+                <Font name="System Bold" size="21.0" />
+            </font>
+        </Label>
+        <JFXTextField fx:id="idTxt" layoutX="101.0" layoutY="146.0" prefHeight="25.0" prefWidth="255.0" />
+        <Label layoutX="98.0" layoutY="119.0" text="Item ID">
+            <font>
+                <Font size="15.0" />
+            </font>
+        </Label>
+        <JFXTextField fx:id="descriptionTxt" layoutX="100.0" layoutY="234.0" prefHeight="25.0" prefWidth="255.0" />
+        <Label layoutX="98.0" layoutY="207.0" text="Item Description">
+            <font>
+                <Font size="15.0" />
+            </font>
+        </Label>
+        <JFXTextField fx:id="qtyTxt" layoutX="100.0" layoutY="320.0" prefHeight="25.0" prefWidth="255.0" />
+        <Label layoutX="98.0" layoutY="291.0" text="QTY">
+            <font>
+                <Font size="15.0" />
+            </font>
+        </Label>
+        <Label layoutX="97.0" layoutY="376.0" text="Unit Price">
+            <font>
+                <Font size="15.0" />
+            </font>
+        </Label>
+      <JFXTextField fx:id="priceTxt" layoutX="97.0" layoutY="406.0" prefHeight="25.0" prefWidth="255.0" />
+        <ComboBox fx:id="catComb" layoutX="98.0" layoutY="496.0" prefHeight="31.0" prefWidth="255.0" />
+        <JFXButton fx:id="saveBtn" layoutX="153.0" layoutY="621.0" onAction="#saveBtnOnAction" prefHeight="47.0" prefWidth="151.0" stylesheets="@../styles/button.css" text="Save Item">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </JFXButton>
+      <Label layoutX="98.0" layoutY="464.0" text="Category">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Label fx:id="descriptionLbl" layoutX="100.0" layoutY="265.0" text="* Item Description cannot be empty" textFill="RED" visible="false" />
+      <Label fx:id="priceLbl" layoutX="98.0" layoutY="440.0" text="* Please enter price" textFill="RED" visible="false" />
+      <Label fx:id="categoryLbl" layoutX="99.0" layoutY="549.0" text="* Please select category" textFill="RED" visible="false" />
+    </children>
+</AnchorPane>

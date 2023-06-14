@@ -1,0 +1,88 @@
+drop database batakade;
+CREATE DATABASE batakade;
+USE batakade;
+
+CREATE TABLE employee(
+	emp_id VARCHAR(6),
+	name VARCHAR(30),
+	phone VARCHAR(12),
+	type VARCHAR(10),
+	CONSTRAINT PRIMARY KEY (emp_id)
+);
+CREATE TABLE user(
+	user_id VARCHAR(6),
+	emp_id VARCHAR(6),
+	password VARCHAR(12),
+	CONSTRAINT PRIMARY KEY (user_id),
+	CONSTRAINT FOREIGN KEY(emp_id) REFERENCES employee(emp_id) ON UPDATE CASCADE ON DELETE CASCADE
+);
+CREATE TABLE salary(
+	salary_id VARCHAR(6),
+	amount DECIMAL(8,2),
+	OT DECIMAL(8,2),
+	emp_id VARCHAR(6),
+	CONSTRAINT PRIMARY KEY (salary_id),
+	CONSTRAINT FOREIGN KEY(emp_id) REFERENCES employee(emp_id) ON UPDATE CASCADE ON DELETE CASCADE
+);
+CREATE TABLE suplier(
+	sup_id VARCHAR(6),
+	name VARCHAR(30),
+	phone VARCHAR(12),
+	CONSTRAINT PRIMARY KEY (sup_id)
+);
+CREATE TABLE itemCategory(
+	cat_id VARCHAR(6),
+	cat_type VARCHAR(15),
+	name VARCHAR(20),
+	CONSTRAINT PRIMARY KEY (cat_id)
+);
+CREATE TABLE item(
+	item_id VARCHAR(6),
+	name VARCHAR(30),
+	unit_price DECIMAL(8,2),
+	QTYonHand INT(10),
+	cat_id VARCHAR(6),
+	cat_type VARCHAR(15),
+	CONSTRAINT PRIMARY KEY (item_id),
+	CONSTRAINT FOREIGN KEY (cat_id) REFERENCES itemCategory(cat_id) ON UPDATE CASCADE ON DELETE CASCADE
+);
+CREATE TABLE suplier_bill(
+	bill_id VARCHAR(6),
+	item_id VARCHAR(6) NOT NULL,
+	sup_id VARCHAR(6),
+	date DATETIME,
+	payment_status VARCHAR(10),
+	price DECIMAL(8,2),
+	CONSTRAINT PRIMARY KEY (item_id,bill_id),
+	CONSTRAINT FOREIGN KEY (item_id) REFERENCES item(item_id) ON UPDATE CASCADE ON DELETE CASCADE,
+	CONSTRAINT FOREIGN KEY (sup_id) REFERENCES suplier(sup_id) ON UPDATE CASCADE ON DELETE CASCADE
+);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

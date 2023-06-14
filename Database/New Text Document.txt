@@ -1,0 +1,41 @@
+Customer: This entity represents the customers who visit the restaurant and place orders.
+
+Attributes: customer_id (primary key), name, phone, email, address.
+Cashier: This entity represents the cashiers who receive payments from customers and manage the billing process.
+
+Attributes: cashier_id (primary key), name, phone, email.
+Waiter: This entity represents the waiters who serve food to customers and manage the order status.
+
+Attributes: waiter_id (primary key), name, phone, email.
+Manager: This entity represents the managers who manage the restaurant operations, employees, and suppliers.
+
+Attributes: manager_id (primary key), name, phone, email.
+Order: This entity represents the orders placed by customers.
+
+Attributes: order_id (primary key), order_date, status, total_price, customer_id (foreign key), delivery_id (foreign key).
+Item: This entity represents the food items that can be ordered.
+
+Attributes: item_id (primary key), name, price.
+Employee: This entity represents the employees who work at the restaurant.
+
+Attributes: employee_id (primary key), name, phone, email, salary.
+Supplier: This entity represents the suppliers who provide food and other supplies to the restaurant.
+
+Attributes: supplier_id (primary key), name, phone, email.
+Table: This entity represents the tables in the restaurant where customers can sit and eat their food.
+
+Attributes: table_id (primary key), capacity, status.
+Delivery: This entity represents the delivery of orders to customers who choose the delivery option.
+
+Attributes: delivery_id (primary key), delivery_date, delivery_address, delivery_status.
+The relationships between entities are:
+
+A customer can place multiple orders. An order is placed by only one customer.
+An order can contain multiple items. An item can be included in multiple orders.
+A cashier can manage multiple orders. An order is managed by only one cashier.
+A waiter can manage multiple orders. An order is managed by only one waiter.
+A manager can manage multiple employees. An employee is managed by only one manager.
+A manager can manage multiple suppliers. A supplier can be managed by multiple managers.
+A customer can be assigned to a table. A table can be assigned to multiple customers.
+An order is associated with a table. A table can have multiple orders associated with it.
+An order can be associated with a delivery. A delivery can be associated with multiple orders.

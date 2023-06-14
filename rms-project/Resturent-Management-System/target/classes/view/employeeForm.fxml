@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane fx:id="root" prefHeight="958.0" prefWidth="1500.0" style="-fx-background-color: rgba(255, 218, 121,0.2);" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.rms.controller.EmployeeFormController">
+   <top>
+      <BorderPane prefHeight="91.0" prefWidth="1315.0" BorderPane.alignment="CENTER">
+         <center>
+            <GridPane BorderPane.alignment="CENTER">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="484.0" minWidth="10.0" prefWidth="409.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="444.0" minWidth="10.0" prefWidth="177.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="831.0" minWidth="10.0" prefWidth="508.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="704.0" minWidth="10.0" prefWidth="224.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <BorderPane prefHeight="200.0" prefWidth="200.0">
+                     <center>
+                        <GridPane BorderPane.alignment="CENTER">
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="215.0" minWidth="10.0" prefWidth="171.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="268.0" minWidth="10.0" prefWidth="268.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <BorderPane prefHeight="200.0" prefWidth="200.0">
+                                 <center>
+                                    <JFXButton fx:id="backBtn" onAction="#backBtnOnAction" prefHeight="26.0" prefWidth="127.0" stylesheets="@../styles/button.css" text="BACK" BorderPane.alignment="CENTER">
+                                       <font>
+                                          <Font size="20.0" />
+                                       </font>
+                                       <graphic>
+                                          <ImageView fitHeight="43.0" fitWidth="43.0">
+                                             <image>
+                                                <Image url="@../img/back.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                    </JFXButton>
+                                 </center>
+                              </BorderPane>
+                              <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
+                                 <center>
+                                    <JFXButton fx:id="newEmpBtn" onAction="#newEmpBtnOnAction" stylesheets="@../styles/button.css" text="Add new employee" BorderPane.alignment="CENTER">
+                                       <font>
+                                          <Font name="System Bold" size="23.0" />
+                                       </font>
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                    </JFXButton>
+                                 </center>
+                              </BorderPane>
+                           </children>
+                        </GridPane>
+                     </center>
+                  </BorderPane>
+                  <BorderPane prefHeight="91.0" prefWidth="403.0" GridPane.columnIndex="1">
+                     <center>
+                        <JFXButton fx:id="salaryBtn" onAction="#salaryBtnOnAction" stylesheets="@../styles/button.css" text="Salary Details" BorderPane.alignment="CENTER">
+                           <font>
+                              <Font name="System Bold" size="23.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </JFXButton>
+                     </center>
+                  </BorderPane>
+               </children>
+            </GridPane>
+         </center>
+      </BorderPane>
+   </top>
+   <center>
+      <GridPane BorderPane.alignment="CENTER">
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="433.0" minWidth="10.0" prefWidth="233.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="1033.0" minWidth="10.0" prefWidth="1033.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="234.0" minWidth="10.0" prefWidth="234.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints maxHeight="700.0" minHeight="10.0" prefHeight="430.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="700.0" minHeight="10.0" prefHeight="329.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="397.0" minHeight="10.0" prefHeight="46.0" vgrow="SOMETIMES" />
+         </rowConstraints>
+         <children>
+            <BorderPane prefHeight="318.0" prefWidth="272.0" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+            <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <center>
+                  <TableView fx:id="employeeTbl" prefHeight="626.0" prefWidth="1031.0" BorderPane.alignment="CENTER">
+                    <columns>
+                      <TableColumn fx:id="empIdCol" prefWidth="140.0" style="-fx-alignment: CENTER;" text="Employee ID" />
+                      <TableColumn fx:id="nameCol" prefWidth="377.0" style="-fx-alignment: CENTER;" text="Employee Name" />
+                        <TableColumn fx:id="phoneCol" prefWidth="88.0" style="-fx-alignment: CENTER;" text="Phone Number" />
+                        <TableColumn fx:id="typeCol" prefWidth="240.0" style="-fx-alignment: CENTER;" text="Type" />
+                        <TableColumn fx:id="dateCol" prefWidth="187.0" style="-fx-alignment: CENTER;" text="Recruitment Date" />
+                    </columns>
+                  </TableView>
+               </center>
+            </BorderPane>
+            <GridPane GridPane.columnIndex="1">
+              <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="277.0" minWidth="6.0" prefWidth="123.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="651.0" minWidth="10.0" prefWidth="601.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="171.0" minWidth="10.0" prefWidth="122.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints maxHeight="383.0" minHeight="10.0" prefHeight="39.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="360.0" minHeight="10.0" prefHeight="346.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="210.0" minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                     <center>
+                        <Pane prefHeight="273.0" prefWidth="625.0" style="-fx-background-color: #f7d794; -fx-background-radius: 20;" BorderPane.alignment="CENTER">
+                           <children>
+                              <Label layoutX="54.0" layoutY="97.0" text="Employee ID :">
+                                 <font>
+                                    <Font name="Lucida Sans Demibold Roman" size="16.0" />
+                                 </font>
+                              </Label>
+                              <JFXTextField fx:id="empIdTxt" disable="true" editable="false" layoutX="215.0" layoutY="92.0" prefHeight="32.0" prefWidth="341.0" style="-fx-background-radius: 10;" stylesheets="@../styles/txtField.css" unFocusColor="#f7d794" />
+                              <Label layoutX="54.0" layoutY="136.0" text="Employee Name :">
+                                 <font>
+                                    <Font name="Lucida Sans Demibold Roman" size="16.0" />
+                                 </font>
+                              </Label>
+                              <JFXTextField fx:id="empNameTxt" disable="true" layoutX="215.0" layoutY="131.0" prefHeight="32.0" prefWidth="341.0" style="-fx-background-radius: 10;" stylesheets="@../styles/txtField.css" unFocusColor="#f7d794" />
+                              <Label layoutX="54.0" layoutY="176.0" text="Phone Number :">
+                                 <font>
+                                    <Font name="Lucida Sans Demibold Roman" size="16.0" />
+                                 </font>
+                              </Label>
+                              <JFXTextField fx:id="phoneTxt" disable="true" layoutX="215.0" layoutY="171.0" prefHeight="32.0" prefWidth="341.0" style="-fx-background-radius: 10;" stylesheets="@../styles/txtField.css" unFocusColor="#f7d794" />
+                              <Label layoutX="54.0" layoutY="215.0" text="Type :">
+                                 <font>
+                                    <Font name="Lucida Sans Demibold Roman" size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="54.0" layoutY="254.0" text="Recruitment Date :">
+                                 <font>
+                                    <Font name="Lucida Sans Demibold Roman" size="16.0" />
+                                 </font>
+                              </Label>
+                              <JFXTextField fx:id="dateTxt" disable="true" editable="false" layoutX="215.0" layoutY="249.0" prefHeight="32.0" prefWidth="341.0" style="-fx-background-radius: 10;" stylesheets="@../styles/txtField.css" unFocusColor="#f7d794" />
+                              <JFXButton fx:id="updateBtn" layoutX="440.0" layoutY="294.0" onAction="#updateBtnOnAction" prefHeight="27.0" prefWidth="110.0" style="-fx-background-radius: 10; -fx-background-color: linear-gradient(to bottom, #455EB5, #673FD7); -fx-border-radius: 10;" text="Update" textFill="WHITE" visible="false">
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                                 <font>
+                                    <Font name="System Bold" size="15.0" />
+                                 </font>
+                              </JFXButton>
+                              <JFXButton fx:id="deleteBtn" layoutX="320.0" layoutY="294.0" onAction="#deleteBtnOnAction" prefHeight="27.0" prefWidth="110.0" style="-fx-background-radius: 10; -fx-background-color: linear-gradient(to bottom, #455EB5, #673FD7); -fx-border-radius: 10;" text="Delete" textFill="WHITE" visible="false">
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                                 <font>
+                                    <Font name="System Bold" size="15.0" />
+                                 </font>
+                              </JFXButton>
+                              <Label fx:id="noResultLbl" layoutX="294.0" layoutY="64.0" text="No Result" textFill="#ea2027" visible="false" />
+                              <ComboBox fx:id="selectEmployee" layoutX="88.0" layoutY="27.0" onAction="#selectEmployeeOnAction" prefHeight="30.0" prefWidth="397.0" />
+                              <ComboBox fx:id="typeCombo" disable="true" layoutX="216.0" layoutY="210.0" prefHeight="30.0" prefWidth="339.0" />
+                              <JFXButton fx:id="refreshBtn" contentDisplay="GRAPHIC_ONLY" layoutX="508.0" layoutY="22.0" onAction="#refreshBtnOnAction" prefHeight="35.0" prefWidth="43.0">
+                                 <graphic>
+                                    <ImageView fitHeight="32.0" fitWidth="32.0">
+                                       <image>
+                                          <Image url="@../img/refresh.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </JFXButton>
+                           </children>
+                        </Pane>
+                     </center>
+                  </BorderPane>
+               </children>
+            </GridPane>
+         </children>
+      </GridPane>
+   </center>
+</BorderPane>

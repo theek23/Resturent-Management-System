@@ -1,0 +1,62 @@
+.text-field {
+    -fx-prompt-text-fill: #8E8E93;
+    -fx-background-color: #F4F4F4;
+    -fx-background-radius: 8px;
+    -fx-border-radius: 8px;
+    -fx-border-width: 1px;
+    -fx-border-color: #C9C9C9;
+    -fx-font-size: 16px;
+    -fx-text-fill: #333333;
+    -fx-pref-height: 36px;
+}
+
+.text-field:focused {
+    -fx-background-color: #FFFFFF;
+    -fx-border-color: #673FD7;
+    -fx-border-width: 2px;
+}
+
+.password-field {
+    -fx-prompt-text-fill: #8E8E93;
+    -fx-background-color: #F4F4F4;
+    -fx-background-radius: 8px;
+    -fx-border-radius: 8px;
+    -fx-border-width: 1px;
+    -fx-border-color: #C9C9C9;
+    -fx-font-size: 16px;
+    -fx-text-fill: #333333;
+    -fx-pref-height: 36px;
+}
+
+.password-field:focused {
+    -fx-background-color: #FFFFFF;
+    -fx-border-color: #673FD7;
+    -fx-border-width: 2px;
+}
+
+.password-field:showing {
+    -fx-background-color: #FFFFFF;
+    -fx-border-color: #673FD7;
+    -fx-border-width: 2px;
+}
+
+.password-field .show-hide-button {
+    -fx-background-color: transparent;
+    -fx-background-radius: 8px;
+    -fx-border-radius: 8px;
+    -fx-border-width: 0;
+}
+
+.password-field .show-hide-button:hover {
+    -fx-background-color: #C9C9C9;
+}
+
+.text-field,
+.password-field {
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.1), 5, 0.0, 0, 1);
+}
+
+.text-field:hover,
+.password-field:hover {
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.2), 5, 0.0, 0, 1);
+}

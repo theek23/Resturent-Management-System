@@ -1,0 +1,19 @@
+.button {
+    -fx-background-color: linear-gradient(to bottom, #673FD7, #455EB5);
+    -fx-background-radius: 20;
+    -fx-background-insets: 0,1,2;
+    -fx-background-size: 100%, 100%, 100%;
+    -fx-effect: dropshadow( gaussian , rgba(0,0,0,0.6) , 5,0,0,1 );
+    -fx-text-fill: white;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-padding: 8px 16px;
+    -fx-border-radius: 4px;
+    -fx-transition: all 0.3s ease;
+}
+
+.button:hover {
+    -fx-background-color: linear-gradient(to bottom, #455EB5, #673FD7);
+    -fx-cursor: hand;
+    -fx-effect: dropshadow( gaussian , rgba(0,0,0,0.6) , 10,0,0,2 );
+}

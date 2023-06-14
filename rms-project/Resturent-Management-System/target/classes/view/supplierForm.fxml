@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="root" prefHeight="958.0" prefWidth="1500.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.rms.controller.SupplierFormController">
+    <children>
+        <GridPane layoutY="-2.0" prefHeight="960.0" prefWidth="1500.0">
+            <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="634.0" minWidth="10.0" prefWidth="321.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="1219.0" minWidth="10.0" prefWidth="1179.0" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            </rowConstraints>
+            <children>
+                <ScrollPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="1500.0" prefWidth="1180.0" style="-fx-background-color: rgba(255, 218, 121,0.2); -fx-background-radius: 15;">
+                            <children>
+                                <GridPane layoutX="1003.0" layoutY="2.0" prefHeight="38.0" prefWidth="175.0">
+                                    <columnConstraints>
+                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="478.0" minWidth="10.0" prefWidth="179.0" />
+                                    </columnConstraints>
+                                    <rowConstraints>
+                                        <RowConstraints maxHeight="35.0" minHeight="10.0" prefHeight="23.0" vgrow="SOMETIMES" />
+                                        <RowConstraints maxHeight="17.0" minHeight="3.0" prefHeight="15.0" vgrow="SOMETIMES" />
+                                    </rowConstraints>
+                                    <children>
+                                        <BorderPane prefHeight="200.0" prefWidth="200.0">
+                                            <center>
+                                                <Label fx:id="date" alignment="CENTER" text="date" BorderPane.alignment="CENTER">
+                                                    <font>
+                                                        <Font name="System Bold" size="10.0" />
+                                                    </font>
+                                                </Label>
+                                            </center>
+                                        </BorderPane>
+                                        <BorderPane prefHeight="32.0" prefWidth="175.0" GridPane.rowIndex="1">
+                                            <center>
+                                                <Label fx:id="time" alignment="CENTER" text="time" BorderPane.alignment="CENTER">
+                                                    <font>
+                                                        <Font size="10.0" />
+                                                    </font>
+                                                </Label>
+                                            </center>
+                                        </BorderPane>
+                                    </children>
+                                </GridPane>
+                        <ImageView fitHeight="746.0" fitWidth="1020.0" layoutX="80.0" layoutY="24.0">
+                           <image>
+                              <Image url="@../img/supplier.png" />
+                           </image>
+                        </ImageView>
+                        <Pane layoutX="373.0" layoutY="109.0" prefHeight="577.0" prefWidth="474.0" style="-fx-background-color: rgba(236, 240, 241,0.8); -fx-background-radius: 20;">
+                           <children>
+                              <Label layoutX="122.0" layoutY="26.0" text="Add New Supplier">
+                                 <font>
+                                    <Font name="System Bold" size="27.0" />
+                                 </font>
+                              </Label>
+                              <JFXTextField fx:id="supId" layoutX="62.0" layoutY="142.0" prefHeight="44.0" prefWidth="350.0" promptText="     Supplier ID">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                              </JFXTextField>
+                              <JFXTextField fx:id="supName" layoutX="62.0" layoutY="245.0" prefHeight="44.0" prefWidth="350.0" promptText="     Supplier Name">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                              </JFXTextField>
+                              <JFXTextField fx:id="supPhone" layoutX="62.0" layoutY="325.0" prefHeight="44.0" prefWidth="350.0" promptText="     Supplier Phone Number">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                              </JFXTextField>
+                              <JFXButton fx:id="saveBtn" layoutX="141.0" layoutY="434.0" onAction="#saveBtnOnAction" prefHeight="44.0" prefWidth="193.0" stylesheets="@../styles/button.css" text="SAVE">
+                                 <font>
+                                    <Font size="22.0" />
+                                 </font>
+                              </JFXButton>
+                              <JFXButton fx:id="updateBtn" layoutX="141.0" layoutY="497.0" onAction="#updateBtnOnAction" prefHeight="44.0" prefWidth="193.0" stylesheets="@../styles/button.css" text="UPDATE" visible="false">
+                                 <font>
+                                    <Font size="22.0" />
+                                 </font>
+                              </JFXButton>
+                              <JFXButton contentDisplay="GRAPHIC_ONLY" layoutX="352.0" layoutY="501.0" prefHeight="10.0" prefWidth="10.0" visible="false">
+                                 <graphic>
+                                    <ImageView fx:id="deleteBtn" fitHeight="28.0" fitWidth="27.0" onDragDetected="#deleteBtnOnAction">
+                                       <image>
+                                          <Image url="@../img/deleteIcon.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </JFXButton>
+                              <Label fx:id="savedLbl" layoutX="218.0" layoutY="400.0" text="SAVED!" textFill="RED" visible="false" />
+                           </children>
+                        </Pane>
+                        <TableView fx:id="supTbl" layoutX="230.0" layoutY="742.0" prefHeight="600.0" prefWidth="720.0">
+                          <columns>
+                            <TableColumn fx:id="supIdCol" prefWidth="150.0" text="Supplier ID" />
+                            <TableColumn fx:id="supNameCol" minWidth="0.0" prefWidth="343.0" text="Supplier Name" />
+                              <TableColumn fx:id="supPhoneCol" minWidth="0.0" prefWidth="226.0" text="Supplier Phone" />
+                          </columns>
+                        </TableView>
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </ScrollPane>
+                <Pane prefHeight="974.0" prefWidth="321.0" style="-fx-background-color: #30336b;">
+                    <children>
+                        <ImageView fitHeight="52.0" fitWidth="200.0" layoutX="56.0" layoutY="14.0">
+                            <image>
+                                <Image url="@../img/batakade.png" />
+                            </image>
+                        </ImageView>
+                        <JFXButton fx:id="dashboardBtn" alignment="BASELINE_LEFT" layoutX="1.0" layoutY="128.0" onAction="#dashboardBtnOnAction" prefHeight="64.0" prefWidth="320.0" text="Dashboard" textFill="WHITE">
+                            <cursor>
+                                <Cursor fx:constant="HAND" />
+                            </cursor>
+                            <font>
+                                <Font size="17.0" />
+                            </font>
+                            <graphic>
+                                <ImageView fitHeight="25.0" fitWidth="25.0">
+                                    <image>
+                                        <Image url="@../img/dashboardIcon.png" />
+                                    </image>
+                                    <cursor>
+                                        <Cursor fx:constant="HAND" />
+                                    </cursor>
+                                </ImageView>
+                            </graphic>
+                        </JFXButton>
+                        <Rectangle fx:id="dashboardRect" arcHeight="5.0" arcWidth="5.0" fill="#badc58" height="64.0" layoutX="1.0" layoutY="128.0" stroke="BLACK" strokeType="INSIDE" visible="false" width="8.0" />
+                        <JFXButton fx:id="orderBtn" alignment="BASELINE_LEFT" layoutX="1.0" layoutY="203.0" onAction="#orderBtnOnAction" prefHeight="64.0" prefWidth="320.0" text="Orders" textFill="WHITE">
+                            <cursor>
+                                <Cursor fx:constant="HAND" />
+                            </cursor>
+                            <font>
+                                <Font size="17.0" />
+                            </font>
+                            <graphic>
+                                <ImageView fitHeight="25.0" fitWidth="25.0">
+                                    <image>
+                                        <Image url="@../img/orderIcon.png" />
+                                    </image>
+                                    <cursor>
+                                        <Cursor fx:constant="HAND" />
+                                    </cursor>
+                                </ImageView>
+                            </graphic>
+                        </JFXButton>
+                        <Rectangle fx:id="orderRect" arcHeight="5.0" arcWidth="5.0" fill="#badc58" height="64.0" layoutX="1.0" layoutY="203.0" stroke="BLACK" strokeType="INSIDE" visible="false" width="8.0" />
+                        <JFXButton fx:id="empBtn" alignment="BASELINE_LEFT" layoutX="1.0" layoutY="276.0" onAction="#empBtnOnAction" prefHeight="64.0" prefWidth="320.0" text="Employee" textFill="WHITE">
+                            <cursor>
+                                <Cursor fx:constant="HAND" />
+                            </cursor>
+                            <font>
+                                <Font size="17.0" />
+                            </font>
+                            <graphic>
+                                <ImageView fitHeight="25.0" fitWidth="25.0">
+                                    <image>
+                                        <Image url="@../img/employeeIcon.png" />
+                                    </image>
+                                    <cursor>
+                                        <Cursor fx:constant="HAND" />
+                                    </cursor>
+                                </ImageView>
+                            </graphic>
+                        </JFXButton>
+                        <Rectangle fx:id="empRect" arcHeight="5.0" arcWidth="5.0" fill="#badc58" height="64.0" layoutX="1.0" layoutY="276.0" stroke="BLACK" strokeType="INSIDE" visible="false" width="8.0" />
+                        <JFXButton fx:id="itemBtn" alignment="BASELINE_LEFT" layoutX="1.0" layoutY="351.0" onAction="#itemBtnOnAction" prefHeight="64.0" prefWidth="320.0" text="Items" textFill="WHITE">
+                            <cursor>
+                                <Cursor fx:constant="HAND" />
+                            </cursor>
+                            <font>
+                                <Font size="17.0" />
+                            </font>
+                            <graphic>
+                                <ImageView fitHeight="25.0" fitWidth="25.0">
+                                    <image>
+                                        <Image url="@../img/itemsIcon.png" />
+                                    </image>
+                                    <cursor>
+                                        <Cursor fx:constant="HAND" />
+                                    </cursor>
+                                </ImageView>
+                            </graphic>
+                        </JFXButton>
+                        <Rectangle fx:id="itemRect" arcHeight="5.0" arcWidth="5.0" fill="#badc58" height="64.0" layoutX="1.0" layoutY="351.0" stroke="BLACK" strokeType="INSIDE" visible="false" width="8.0" />
+                        <JFXButton fx:id="supBtn" alignment="BASELINE_LEFT" layoutX="1.0" layoutY="423.0" onAction="#supBtnOnAction" prefHeight="64.0" prefWidth="320.0" style="-fx-background-color: #130f40;" text="Suppliers" textFill="WHITE">
+                            <cursor>
+                                <Cursor fx:constant="HAND" />
+                            </cursor>
+                            <font>
+                                <Font size="17.0" />
+                            </font>
+                            <graphic>
+                                <ImageView fitHeight="25.0" fitWidth="25.0">
+                                    <image>
+                                        <Image url="@../img/supplierIcon.png" />
+                                    </image>
+                                    <cursor>
+                                        <Cursor fx:constant="HAND" />
+                                    </cursor>
+                                </ImageView>
+                            </graphic>
+                        </JFXButton>
+                        <Rectangle fx:id="supRect" arcHeight="5.0" arcWidth="5.0" fill="#badc58" height="64.0" layoutX="1.0" layoutY="423.0" stroke="BLACK" strokeType="INSIDE" width="8.0" />
+                        <JFXButton fx:id="billsBtn" alignment="BASELINE_LEFT" layoutX="1.0" layoutY="496.0" onAction="#billsBtnOnAction" prefHeight="64.0" prefWidth="320.0" text="Bills" textFill="WHITE">
+                            <cursor>
+                                <Cursor fx:constant="HAND" />
+                            </cursor>
+                            <font>
+                                <Font size="17.0" />
+                            </font>
+                            <graphic>
+                                <ImageView fitHeight="25.0" fitWidth="25.0">
+                                    <image>
+                                        <Image url="@../img/billsIcon.png" />
+                                    </image>
+                                    <cursor>
+                                        <Cursor fx:constant="HAND" />
+                                    </cursor>
+                                </ImageView>
+                            </graphic>
+                        </JFXButton>
+                        <Rectangle fx:id="billRect" arcHeight="5.0" arcWidth="5.0" fill="#badc58" height="64.0" layoutX="1.0" layoutY="496.0" stroke="BLACK" strokeType="INSIDE" visible="false" width="8.0" />
+                        <JFXButton fx:id="settingsBtn" alignment="BASELINE_LEFT" layoutX="1.0" layoutY="560.0" onAction="#settingsBtnOnAction" prefHeight="64.0" prefWidth="320.0" text="Settings" textFill="WHITE">
+                            <cursor>
+                                <Cursor fx:constant="HAND" />
+                            </cursor>
+                            <font>
+                                <Font size="17.0" />
+                            </font>
+                            <graphic>
+                                <ImageView fitHeight="25.0" fitWidth="25.0">
+                                    <image>
+                                        <Image url="@../img/settingsIcon.png" />
+                                    </image>
+                                    <cursor>
+                                        <Cursor fx:constant="HAND" />
+                                    </cursor>
+                                </ImageView>
+                            </graphic>
+                        </JFXButton>
+                        <Rectangle fx:id="billRect1" arcHeight="5.0" arcWidth="5.0" fill="#badc58" height="64.0" layoutX="9.0" layoutY="560.0" stroke="BLACK" strokeType="INSIDE" visible="false" width="8.0" />
+                        <JFXButton fx:id="logoutBtn" alignment="CENTER" layoutX="80.0" layoutY="880.0" onAction="#logoutBtnOnAction" prefHeight="52.0" prefWidth="152.0" style="-fx-background-color: #3742fa; -fx-background-radius: 20;" text="Log Out" textFill="WHITE">
+                            <cursor>
+                                <Cursor fx:constant="HAND" />
+                            </cursor>
+                            <font>
+                                <Font size="17.0" />
+                            </font>
+                            <graphic>
+                                <ImageView fitHeight="25.0" fitWidth="25.0">
+                                    <image>
+                                        <Image url="@../img/logoutIcon.png" />
+                                    </image>
+                                    <cursor>
+                                        <Cursor fx:constant="HAND" />
+                                    </cursor>
+                                </ImageView>
+                            </graphic>
+                        </JFXButton>
+                        <Rectangle fx:id="billRect11" arcHeight="5.0" arcWidth="5.0" fill="#badc58" height="64.0" layoutX="9.0" layoutY="630.0" stroke="BLACK" strokeType="INSIDE" visible="false" width="8.0" />
+                    </children>
+                </Pane>
+            </children>
+        </GridPane>
+    </children>
+</AnchorPane>

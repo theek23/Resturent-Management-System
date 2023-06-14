@@ -1,0 +1,430 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.chart.AreaChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="root" prefHeight="958.0" prefWidth="1500.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.rms.controller.DashboardFormController">
+   <children>
+      <GridPane layoutY="-2.0" prefHeight="960.0" prefWidth="1500.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="634.0" minWidth="10.0" prefWidth="321.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="1219.0" minWidth="10.0" prefWidth="1179.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <ScrollPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="1500.0" prefWidth="1180.0" style="-fx-background-color: rgba(255, 218, 121,0.2); -fx-background-radius: 15;">
+                     <children>
+                        <GridPane layoutX="1003.0" layoutY="2.0" prefHeight="38.0" prefWidth="175.0">
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="478.0" minWidth="10.0" prefWidth="179.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints maxHeight="35.0" minHeight="10.0" prefHeight="23.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="17.0" minHeight="3.0" prefHeight="15.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <BorderPane prefHeight="200.0" prefWidth="200.0">
+                                 <center>
+                                    <Label fx:id="date" alignment="CENTER" text="date" BorderPane.alignment="CENTER">
+                                       <font>
+                                          <Font name="System Bold" size="10.0" />
+                                       </font>
+                                    </Label>
+                                 </center>
+                              </BorderPane>
+                              <BorderPane prefHeight="32.0" prefWidth="175.0" GridPane.rowIndex="1">
+                                 <center>
+                                    <Label fx:id="time" alignment="CENTER" text="time" BorderPane.alignment="CENTER">
+                                       <font>
+                                          <Font size="10.0" />
+                                       </font>
+                                    </Label>
+                                 </center>
+                              </BorderPane>
+                           </children>
+                        </GridPane>
+                        <TextField layoutX="22.0" layoutY="22.0" prefHeight="30.0" prefWidth="509.0" promptText="Search for something" />
+                        <JFXButton layoutX="546.0" layoutY="24.0" prefHeight="25.0" prefWidth="77.0" style="-fx-background-color: #2ed573; -fx-background-radius: 10;" text="Search" textFill="WHITE">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </JFXButton>
+                        <Pane layoutX="24.0" layoutY="132.0" prefHeight="124.0" prefWidth="175.0" style="-fx-background-color: white; -fx-background-radius: 15;" stylesheets="@../styles/paneStyle.css">
+                           <children>
+                              <Label layoutX="14.0" layoutY="19.0" text="Today" textFill="#2ed573">
+                                 <font>
+                                    <Font name="System Bold" size="15.0" />
+                                 </font>
+                              </Label>
+                              <JFXButton contentDisplay="GRAPHIC_ONLY" layoutX="131.0" layoutY="10.0" prefHeight="35.0" prefWidth="42.0">
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                                 <graphic>
+                                    <ImageView fitHeight="28.0" fitWidth="28.0">
+                                       <image>
+                                          <Image url="@../img/goIcon.png" />
+                                       </image>
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                    </ImageView>
+                                 </graphic>
+                              </JFXButton>
+                              <Separator layoutX="12.0" layoutY="56.0" prefHeight="13.0" prefWidth="152.0" />
+                              <Label fx:id="tdyLbl" layoutX="29.0" layoutY="79.0" prefHeight="21.0" prefWidth="66.0" text="31500.00">
+                                 <font>
+                                    <Font name="Segoe UI Bold" size="15.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </Pane>
+                        <Pane layoutX="226.0" layoutY="133.0" prefHeight="124.0" prefWidth="175.0" style="-fx-background-color: white; -fx-background-radius: 15;" stylesheets="@../styles/paneStyle.css">
+                           <children>
+                              <Label layoutX="14.0" layoutY="17.0" text="Yesterday" textFill="#2ed573">
+                                 <font>
+                                    <Font name="System Bold" size="15.0" />
+                                 </font>
+                              </Label>
+                              <JFXButton contentDisplay="GRAPHIC_ONLY" layoutX="128.0" layoutY="9.0" prefHeight="35.0" prefWidth="42.0">
+                                 <graphic>
+                                    <ImageView fitHeight="28.0" fitWidth="28.0">
+                                       <image>
+                                          <Image url="@../img/goIcon.png" />
+                                       </image>
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                    </ImageView>
+                                 </graphic>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </JFXButton>
+                              <Separator layoutX="12.0" layoutY="61.0" prefHeight="0.0" prefWidth="152.0" />
+                              <Label fx:id="yesterdayLbl" layoutX="28.0" layoutY="78.0" prefHeight="21.0" prefWidth="66.0" text="31500.00">
+                                 <font>
+                                    <Font name="Segoe UI Bold" size="15.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </Pane>
+                        <Pane layoutX="429.0" layoutY="133.0" prefHeight="124.0" prefWidth="175.0" style="-fx-background-color: white; -fx-background-radius: 15;" stylesheets="@../styles/paneStyle.css">
+                           <children>
+                              <Label layoutX="13.0" layoutY="17.0" text="Last 7 Days" textFill="#2ed573">
+                                 <font>
+                                    <Font name="System Bold" size="15.0" />
+                                 </font>
+                              </Label>
+                              <JFXButton contentDisplay="GRAPHIC_ONLY" layoutX="128.0" layoutY="9.0" prefHeight="35.0" prefWidth="42.0" text="Button">
+                                 <graphic>
+                                    <ImageView fitHeight="28.0" fitWidth="28.0">
+                                       <image>
+                                          <Image url="@../img/goIcon.png" />
+                                       </image>
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                    </ImageView>
+                                 </graphic>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </JFXButton>
+                              <Separator layoutX="13.0" layoutY="60.0" prefHeight="0.0" prefWidth="152.0" />
+                              <Label fx:id="last7Lbl" layoutX="19.0" layoutY="78.0" prefHeight="21.0" prefWidth="66.0" text="31500.00">
+                                 <font>
+                                    <Font name="Segoe UI Bold" size="15.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </Pane>
+                        <Pane layoutX="632.0" layoutY="133.0" prefHeight="124.0" prefWidth="175.0" style="-fx-background-color: white; -fx-background-radius: 15;" stylesheets="@../styles/paneStyle.css">
+                           <children>
+                              <Label layoutX="13.0" layoutY="17.0" text="Last 30 Days" textFill="#2ed573">
+                                 <font>
+                                    <Font name="System Bold" size="15.0" />
+                                 </font>
+                              </Label>
+                              <JFXButton contentDisplay="GRAPHIC_ONLY" layoutX="128.0" layoutY="9.0" prefHeight="35.0" prefWidth="42.0">
+                                 <graphic>
+                                    <ImageView fitHeight="28.0" fitWidth="28.0">
+                                       <image>
+                                          <Image url="@../img/goIcon.png" />
+                                       </image>
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                    </ImageView>
+                                 </graphic>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </JFXButton>
+                              <Separator layoutX="13.0" layoutY="60.0" prefHeight="0.0" prefWidth="152.0" />
+                              <Label fx:id="thisMonthLbl" layoutX="24.0" layoutY="79.0" prefHeight="21.0" prefWidth="66.0" text="31500.00">
+                                 <font>
+                                    <Font name="Segoe UI Bold" size="15.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </Pane>
+                        <Pane layoutX="839.0" layoutY="133.0" prefHeight="124.0" prefWidth="300.0" style="-fx-background-color: white; -fx-background-radius: 15;" stylesheets="@../styles/paneStyle.css">
+                           <children>
+                              <Label layoutX="11.0" layoutY="18.0" text="Total Sales" textFill="#2ed573">
+                                 <font>
+                                    <Font name="System Bold" size="15.0" />
+                                 </font>
+                              </Label>
+                              <JFXButton contentDisplay="GRAPHIC_ONLY" layoutX="253.0" layoutY="10.0" onAction="#last30DaysBtnOnAction" prefHeight="35.0" prefWidth="42.0">
+                                 <graphic>
+                                    <ImageView fitHeight="28.0" fitWidth="28.0">
+                                       <image>
+                                          <Image url="@../img/goIcon.png" />
+                                       </image>
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                    </ImageView>
+                                 </graphic>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </JFXButton>
+                              <Separator layoutX="13.0" layoutY="60.0" prefHeight="0.0" prefWidth="279.0" />
+                              <Label fx:id="totalLbl" layoutX="22.0" layoutY="77.0" prefHeight="21.0" prefWidth="66.0" text="31500.00">
+                                 <font>
+                                    <Font name="Segoe UI Bold" size="15.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </Pane>
+                        <LineChart fx:id="lineChart" layoutX="24.0" layoutY="291.0" prefHeight="373.0" prefWidth="781.0" style="-fx-background-color: white; -fx-background-radius: 15;" title="Transactions">
+                          <xAxis>
+                            <CategoryAxis endMargin="20.0" prefHeight="23.0" prefWidth="724.0" side="BOTTOM" fx:id="x" />
+                          </xAxis>
+                          <yAxis>
+                            <NumberAxis fx:id="y" side="LEFT" upperBound="500.0" />
+                          </yAxis>
+                        </LineChart>
+                        <TableView fx:id="orderTable" layoutX="24.0" layoutY="694.0" prefHeight="790.0" prefWidth="1118.0" style="-fx-background-radius: 15;" stylesheets="@../styles/tabeleStyles.css">
+                          <columns>
+                            <TableColumn fx:id="orderId" prefWidth="135.0" style="-fx-alignment: Center;" text="Order ID" />
+                            <TableColumn fx:id="itemQTY" prefWidth="141.0" style="-fx-alignment: center;" text="Item QTY" />
+                              <TableColumn fx:id="price" prefWidth="169.0" style="-fx-alignment: center;" text="Price" />
+                              <TableColumn fx:id="status" prefWidth="288.0" style="-fx-alignment: center;" text="Status" />
+                              <TableColumn fx:id="custName" prefWidth="384.0" style="-fx-alignment: center;" text="Customer Name" />
+                          </columns>
+                        </TableView>
+                        <JFXButton layoutX="736.0" layoutY="22.0" onAction="#reportBtnOnAction" prefHeight="30.0" prefWidth="118.0" style="-fx-background-color: #2ed573; -fx-background-radius: 10;" text="Genarate Reports" textFill="WHITE">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </JFXButton>
+                        <AreaChart fx:id="areaChart" layoutX="841.0" layoutY="289.0" prefHeight="375.0" prefWidth="297.0" style="-fx-background-color: white; -fx-background-radius: 10;">
+                          <xAxis>
+                            <CategoryAxis fx:id="areaX" side="BOTTOM" />
+                          </xAxis>
+                          <yAxis>
+                            <NumberAxis fx:id="areaY" side="LEFT" />
+                          </yAxis>
+                        </AreaChart>
+                     </children>
+                  </AnchorPane>
+              </content>
+            </ScrollPane>
+            <Pane prefHeight="974.0" prefWidth="321.0" style="-fx-background-color: #30336b;">
+               <children>
+                  <ImageView fitHeight="52.0" fitWidth="200.0" layoutX="56.0" layoutY="14.0">
+                     <image>
+                        <Image url="@../img/batakade.png" />
+                     </image>
+                  </ImageView>
+                  <JFXButton fx:id="dashboardBtn" alignment="BASELINE_LEFT" layoutX="1.0" layoutY="128.0" prefHeight="64.0" prefWidth="320.0" style="-fx-background-color: #130f40;" text="Dashboard" textFill="WHITE">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="25.0" fitWidth="25.0">
+                           <image>
+                              <Image url="@../img/dashboardIcon.png" />
+                           </image>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </ImageView>
+                     </graphic>
+                  </JFXButton>
+                  <Rectangle fx:id="dashboardRect" arcHeight="5.0" arcWidth="5.0" fill="#badc58" height="64.0" layoutX="1.0" layoutY="128.0" stroke="BLACK" strokeType="INSIDE" width="8.0" />
+                  <JFXButton fx:id="orderBtn" alignment="BASELINE_LEFT" layoutX="1.0" layoutY="203.0" onAction="#orderBtnOnAction" prefHeight="64.0" prefWidth="320.0" text="Orders" textFill="WHITE">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="25.0" fitWidth="25.0">
+                           <image>
+                              <Image url="@../img/orderIcon.png" />
+                           </image>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </ImageView>
+                     </graphic>
+                  </JFXButton>
+                  <Rectangle fx:id="orderRect" arcHeight="5.0" arcWidth="5.0" fill="#badc58" height="64.0" layoutX="1.0" layoutY="203.0" stroke="BLACK" strokeType="INSIDE" visible="false" width="8.0" />
+                  <JFXButton fx:id="empBtn" alignment="BASELINE_LEFT" layoutX="1.0" layoutY="276.0" onAction="#empBtnOnAction" prefHeight="64.0" prefWidth="320.0" text="Employee" textFill="WHITE">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="25.0" fitWidth="25.0">
+                           <image>
+                              <Image url="@../img/employeeIcon.png" />
+                           </image>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </ImageView>
+                     </graphic>
+                  </JFXButton>
+                  <Rectangle fx:id="empRect" arcHeight="5.0" arcWidth="5.0" fill="#badc58" height="64.0" layoutX="1.0" layoutY="276.0" stroke="BLACK" strokeType="INSIDE" visible="false" width="8.0" />
+                  <JFXButton fx:id="itemBtn" alignment="BASELINE_LEFT" layoutX="1.0" layoutY="351.0" onAction="#itemBtnOnAction" prefHeight="64.0" prefWidth="320.0" text="Items" textFill="WHITE">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="25.0" fitWidth="25.0">
+                           <image>
+                              <Image url="@../img/itemsIcon.png" />
+                           </image>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </ImageView>
+                     </graphic>
+                  </JFXButton>
+                  <Rectangle fx:id="itemRect" arcHeight="5.0" arcWidth="5.0" fill="#badc58" height="64.0" layoutX="1.0" layoutY="351.0" stroke="BLACK" strokeType="INSIDE" visible="false" width="8.0" />
+                  <JFXButton fx:id="supBtn" alignment="BASELINE_LEFT" layoutX="1.0" layoutY="423.0" onAction="#supBtnOnAction" prefHeight="64.0" prefWidth="320.0" text="Suppliers" textFill="WHITE">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="25.0" fitWidth="25.0">
+                           <image>
+                              <Image url="@../img/supplierIcon.png" />
+                           </image>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </ImageView>
+                     </graphic>
+                  </JFXButton>
+                  <Rectangle fx:id="supRect" arcHeight="5.0" arcWidth="5.0" fill="#badc58" height="64.0" layoutX="1.0" layoutY="423.0" stroke="BLACK" strokeType="INSIDE" visible="false" width="8.0" />
+                  <JFXButton fx:id="billsBtn" alignment="BASELINE_LEFT" layoutX="1.0" layoutY="496.0" onAction="#billsBtnOnAction" prefHeight="64.0" prefWidth="320.0" text="Bills" textFill="WHITE">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="25.0" fitWidth="25.0">
+                           <image>
+                              <Image url="@../img/billsIcon.png" />
+                           </image>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </ImageView>
+                     </graphic>
+                  </JFXButton>
+                  <Rectangle fx:id="billRect" arcHeight="5.0" arcWidth="5.0" fill="#badc58" height="64.0" layoutX="1.0" layoutY="496.0" stroke="BLACK" strokeType="INSIDE" visible="false" width="8.0" />
+                  <JFXButton fx:id="billsBtn1" alignment="BASELINE_LEFT" layoutX="1.0" layoutY="560.0" onAction="#billsBtnOnAction" prefHeight="64.0" prefWidth="320.0" text="Settings" textFill="WHITE">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="25.0" fitWidth="25.0">
+                           <image>
+                              <Image url="@../img/settingsIcon.png" />
+                           </image>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </ImageView>
+                     </graphic>
+                  </JFXButton>
+                  <Rectangle fx:id="billRect1" arcHeight="5.0" arcWidth="5.0" fill="#badc58" height="64.0" layoutX="9.0" layoutY="560.0" stroke="BLACK" strokeType="INSIDE" visible="false" width="8.0" />
+                  <JFXButton alignment="CENTER" layoutX="80.0" layoutY="880.0" onAction="#LogoutBtnOnAction" prefHeight="52.0" prefWidth="152.0" style="-fx-background-color: #3742fa; -fx-background-radius: 20;" text="Log Out" textFill="WHITE">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="25.0" fitWidth="25.0">
+                           <image>
+                              <Image url="@../img/logoutIcon.png" />
+                           </image>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </ImageView>
+                     </graphic>
+                  </JFXButton>
+                  <Rectangle fx:id="billRect11" arcHeight="5.0" arcWidth="5.0" fill="#badc58" height="64.0" layoutX="9.0" layoutY="630.0" stroke="BLACK" strokeType="INSIDE" visible="false" width="8.0" />
+               </children>
+            </Pane>
+         </children>
+      </GridPane>
+   </children>
+</AnchorPane>

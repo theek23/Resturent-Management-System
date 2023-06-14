@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="739.0" prefWidth="1204.0" style="-fx-background-color: rgba(255, 218, 121,0.2);" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.rms.controller.PlaceOrderFormController">
+   <children>
+      <ImageView fitHeight="272.0" fitWidth="338.0" layoutX="900.0" layoutY="-23.0" style="-fx-opacity: 50%;">
+         <image>
+            <Image url="@../img/yimg_aU2Tut.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="486.0" fitWidth="351.0" layoutX="-49.0" layoutY="359.0" style="-fx-opacity: 50%;">
+         <image>
+            <Image url="@../img/kottu.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="524.0" fitWidth="351.0" layoutX="406.0" layoutY="97.0" style="-fx-opacity: 50%;">
+         <image>
+            <Image url="@../img/580b57fbd9996e24bc43c0e0.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="511.0" layoutY="17.0" text="Place New Order">
+         <font>
+            <Font name="System Bold" size="25.0" />
+         </font>
+      </Label>
+      <JFXTextField fx:id="orderIdTxt" layoutX="107.0" layoutY="159.0" prefHeight="25.0" prefWidth="351.0">
+         <font>
+            <Font size="15.0" />
+         </font></JFXTextField>
+      <Label layoutX="107.0" layoutY="122.0" text="Order ID">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Label>
+      <JFXTextField fx:id="customerNameTxt" layoutX="107.0" layoutY="259.0" prefHeight="25.0" prefWidth="351.0">
+         <font>
+            <Font size="15.0" />
+         </font></JFXTextField>
+      <Label layoutX="106.0" layoutY="216.0" text="Customer Name">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Label>
+      <JFXTextField fx:id="custPhoneTxt" layoutX="106.0" layoutY="359.0" prefHeight="31.0" prefWidth="351.0">
+         <font>
+            <Font size="15.0" />
+         </font></JFXTextField>
+      <Label layoutX="105.0" layoutY="326.0" text="Customer Phone">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Label>
+      <JFXTextField fx:id="totalTxt" editable="false" focusColor="RED" labelFloat="true" layoutX="587.0" layoutY="540.0" prefHeight="50.0" prefWidth="313.0" style="-fx-text-fill: red;" unFocusColor="#ffd97a00">
+         <font>
+            <Font size="35.0" />
+         </font></JFXTextField>
+      <Label layoutX="487.0" layoutY="560.0" text="Total :">
+         <font>
+            <Font size="23.0" />
+         </font>
+      </Label>
+      <ComboBox fx:id="orderStatusComb" layoutX="715.0" layoutY="478.0" prefHeight="31.0" prefWidth="351.0" />
+      <Label layoutX="715.0" layoutY="442.0" text="Status">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Label>
+      <Label layoutX="715.0" layoutY="122.0" text="Items">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Label>
+      <ComboBox fx:id="itemCombo" editable="true" layoutX="715.0" layoutY="159.0" onMouseClicked="#itemComboOnMouseClicked" prefHeight="31.0" prefWidth="263.0" />
+      <JFXTextField fx:id="qtyTxt" layoutX="1008.0" layoutY="156.0" onAction="#qtyTxtOnAction" prefHeight="25.0" prefWidth="58.0" promptText="QTY">
+         <font>
+            <Font size="15.0" />
+         </font></JFXTextField>
+      <Label layoutX="107.0" layoutY="425.0" text="Order Type">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Label>
+      <ComboBox fx:id="orderTypeCombo" layoutX="107.0" layoutY="470.0" prefHeight="31.0" prefWidth="351.0" />
+      <TableView fx:id="itemTbl" layoutX="715.0" layoutY="225.0" onMouseClicked="#itemTblOnMouseClicked" prefHeight="199.0" prefWidth="351.0" stylesheets="@../styles/tabeleStyles.css">
+        <columns>
+          <TableColumn fx:id="itemCol" editable="false" prefWidth="243.0" style="-fx-alignment: CENTER;" text="Item" />
+          <TableColumn fx:id="qtyCol" prefWidth="48.0" style="-fx-alignment: CENTER;" text="QTY" />
+            <TableColumn fx:id="priceCol" prefWidth="59.0" style="-fx-alignment: CENTER;" text="Price" />
+        </columns>
+      </TableView>
+      <JFXButton fx:id="saveOrderBtn" layoutX="534.0" layoutY="652.0" onAction="#saveOrderBtnOnAction" prefHeight="47.0" prefWidth="151.0" stylesheets="@../styles/button.css" text="Place Order">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </JFXButton>
+      <JFXTextField fx:id="countTxt" layoutX="581.0" layoutY="82.0" prefHeight="31.0" prefWidth="42.0" visible="false">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </JFXTextField>
+      <Label fx:id="addTxt" layoutX="715.0" layoutY="199.0" text="Already Added. You can update it by clicking it" textFill="RED" visible="false" />
+      <JFXButton fx:id="deleteBtn" contentDisplay="GRAPHIC_ONLY" layoutX="978.0" layoutY="194.0" onAction="#deleteBtnOnAction" visible="false">
+         <graphic>
+            <ImageView fitHeight="20.0" fitWidth="20.0">
+               <image>
+                  <Image url="@../img/deleteIcon.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <JFXButton fx:id="updateBtn" contentDisplay="GRAPHIC_ONLY" layoutX="1030.0" layoutY="194.0" onAction="#updateBtnOnAction" visible="false">
+         <graphic>
+            <ImageView fitHeight="20.0" fitWidth="20.0">
+               <image>
+                  <Image url="@../img/updateIcon.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <ImageView fx:id="doneIcon" fitHeight="20.0" fitWidth="20.0" layoutX="739.0" layoutY="666.0" visible="false">
+         <image>
+            <Image url="@../img/done.gif" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

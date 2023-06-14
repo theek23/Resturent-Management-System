@@ -1,0 +1,27 @@
+.dot {
+    -fx-fill: #2196F3;
+    -fx-radius: 2px;
+    -fx-animation-duration: 1.5s;
+    -fx-animation-timing-function: linear;
+    -fx-animation-iteration-count: infinite;
+}
+
+.large-dot {
+    -fx-radius: 5px;
+}
+
+@keyframes pulse {
+    0% {
+        -fx-radius: 2px;
+    }
+    50% {
+        -fx-radius: 5px;
+    }
+    100% {
+        -fx-radius: 2px;
+    }
+}
+
+.dot:hover {
+    -fx-cursor: hand;
+}

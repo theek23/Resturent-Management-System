@@ -1,0 +1,23 @@
+.menu-bar {
+    -fx-background-color: rgba(156, 136, 255, 0.5);
+    -fx-font-size: 20px;
+    -fx-pref-height: 50px;
+}
+
+.menu {
+    -fx-background-color: rgba(156, 136, 255, 0.5);
+}
+
+.menu-item {
+    -fx-font-size: 16px;
+    -fx-text-fill: #ffffff;
+    -fx-background-color: #ffffff;
+}
+
+.menu-item:hover {
+    -fx-background-color: rgba(255, 255, 255, 0.2);
+}
+
+.menu-item:focused {
+    -fx-background-color: rgba(255, 255, 255, 0.2);
+}

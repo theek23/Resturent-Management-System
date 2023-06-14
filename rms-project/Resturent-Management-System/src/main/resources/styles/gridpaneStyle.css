@@ -1,0 +1,8 @@
+.grid-pane {
+    -fx-background-color: rgba(127, 143, 166, 0.5);
+    -fx-border-color: #ccc;
+    -fx-border-width: 1px;
+    -fx-border-radius: 10px;
+    -fx-grid-lines-color: rgba(64, 115, 158,1.0);
+    -fx-grid-lines-visible: true;
+}

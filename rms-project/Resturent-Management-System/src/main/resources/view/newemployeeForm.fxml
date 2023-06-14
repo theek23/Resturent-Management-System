@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="659.0" prefWidth="455.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.rms.controller.NewEmployeeFormController">
+   <children>
+      <Label layoutX="133.0" layoutY="32.0" text="Add New Employee">
+         <font>
+            <Font name="System Bold" size="21.0" />
+         </font>
+      </Label>
+      <JFXTextField fx:id="empIdTxt" layoutX="116.0" layoutY="146.0" prefHeight="25.0" prefWidth="222.0" />
+      <Label layoutX="116.0" layoutY="125.0" text="Employee ID">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <JFXTextField fx:id="empName" layoutX="116.0" layoutY="240.0" prefHeight="25.0" prefWidth="222.0" />
+      <Label layoutX="116.0" layoutY="207.0" text="Employee Name">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <JFXTextField fx:id="empPhone" layoutX="117.0" layoutY="345.0" prefHeight="25.0" prefWidth="222.0" />
+      <Label layoutX="116.0" layoutY="310.0" text="Employee Phone Number">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="116.0" layoutY="403.0" text="Employee Type">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <ComboBox fx:id="empTypeCombo" layoutX="117.0" layoutY="441.0" prefHeight="25.0" prefWidth="222.0" />
+      <JFXButton fx:id="saveBtn" layoutX="152.0" layoutY="545.0" onAction="#saveBtnOnAction" prefHeight="47.0" prefWidth="151.0" stylesheets="@../styles/button.css" text="Add Employee">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </JFXButton>
+      <Label fx:id="emptyEmpLbl" layoutX="116.0" layoutY="275.0" prefHeight="17.0" prefWidth="194.0" text="* Employee name cannot be empty" textFill="RED" />
+      <Label fx:id="emptyPhoneLbl" layoutX="116.0" layoutY="377.0" prefHeight="17.0" prefWidth="245.0" text="* Employee phone number cannot be empty" textFill="RED" />
+      <Label fx:id="selectLbl" layoutX="116.0" layoutY="473.0" prefHeight="17.0" prefWidth="245.0" text="* Please select employee type" textFill="RED" />
+   </children>
+</AnchorPane>

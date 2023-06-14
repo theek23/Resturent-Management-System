@@ -1,0 +1,10 @@
+/* Add shadow to the pane */
+.pane {
+    -fx-background-color: white;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 10, 0.5, 0, 3);
+}
+
+/* Add hover effect to the pane */
+.pane:hover {
+    -fx-background-color: lightgray;
+}
